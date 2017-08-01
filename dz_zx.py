@@ -64,7 +64,7 @@ def insert_d_zx(data,wdate):
     cursor = conn.cursor()
     cursor.execute("""delete from d_zx where wdate >='%s'"""%(wdate))
     for each in data:
-        cursor.execute("""INSERT INTO d_zx(wdate,createtime,city,zx_fk_c,zx_order_fk_c,zx_order_c,zx_order_pay_fk_c,zx_order_tk_fk_c) VALUES('%s','%s','%s',%s,%s,%s,%s,%s)
+        cursor.execute("""INSERT INTO d_zx(wdate,createtime,city,zx_c,zx_o_c,zx_o_n,zx_o_p_c,zx_o_s_c) VALUES('%s','%s','%s',%s,%s,%s,%s,%s)
         """%(each[0],time.strftime('%Y-%m-%d %H:%M:%S',time.localtime()),each[1],each[2],each[3],each[4],each[5],each[6]))
     cursor.close()
     conn.commit()
